@@ -1,0 +1,14 @@
+    [
+        {"name": "Blogger",
+         "url": "https://www.blogger.com/",
+         "logo": "images/blogger_24.png"
+        },
+        {"name": "Last.FM",
+         "url": "https://www.last.fm/",
+         "logo": "images/last_fm.png"
+        },
+        {"name": "Flickr",
+         "url": "https://www.flickr.com/",
+         "logo": "images/flickr.png"
+        }
+    ]

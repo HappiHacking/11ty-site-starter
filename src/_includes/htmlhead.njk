@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}">
+  <link rel="stylesheet" href="/css/stylesheet.css">
+</head>
+<body>
+<div class=main-grid>
+<!-- page header -->
+<header>
+  <!-- top level menu -->
+  <div id="topmenu">
+    <input type="checkbox" id="topmenu-toggle">
+    <label for="topmenu-toggle" id="topmenu-icon">
+      <svg id="topmenu-burger" width="1.5rem" height="1.5rem" viewBox="0 0 100 80">
+        <rect width="100" height="20" rx="10"></rect>
+        <rect y="30" width="100" height="20" rx="10"></rect>
+        <rect y="60" width="100" height="20" rx="10"></rect>
+      </svg>
+      <svg id="topmenu-close" width="24" height="24" viewBox="0 0 100 80">
+        <rect y="30" width="100" height="20" rx="10" transform="rotate(45 50 40)"></rect>
+        <rect y="30" width="100" height="20" rx="10" transform="rotate(-45 50 40)"></rect>
+      </svg>
+    </label>
+    {% set menuPages = collections.all | eleventyNavigation -%}
+    <ul id="topmenu-list">
+      {%- for entry in menuPages %}
+      <li{% if entry.url == page.url %} class="topmenu-item-active"{% else %} class="topmenu-item"{% endif %}>
+        <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+{{ headercontent }}
+</header>
+<div class=left-column>
+<nav>
+<!-- navigation -->
+  <div class="nav-bar">
+    {{ collections.all
+     | eleventyNavigation
+     | eleventyNavigationToHtml({ activeKey: eleventyNavigation.key,
+                                  listClass: "nav-list",
+                                  anchorClass: "nav-anchor",
+                                  activeAnchorClass: "nav-anchor-active",
+                                  listItemClass: "nav-item",
+                                  activeListItemClass: "nav-item-active"})
+     | safe }}
+  </div>
+</nav>
+</div>
+<div class=right-column>
+</div>
