@@ -1,7 +1,7 @@
 ---
 id: SITE-1
 title: "Patch Immutable.js denial-of-service vulnerability"
-status: in_progress
+status: in_review
 priority: high
 labels: [security, dependencies]
 created_by: happi
