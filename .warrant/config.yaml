@@ -1,0 +1,11 @@
+# Warrant configuration
+prefix: SITE
+tasks_dir: .warrant/tasks
+protected_branch: master
+
+# Server (optional - enables ID allocation, CAS, leases, hash chain)
+# server:
+#   url: http://localhost:8090
+#   org: myorg
+#   project: myproject
+#   token_env: WARRANT_TOKEN
